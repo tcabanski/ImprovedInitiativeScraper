@@ -4,7 +4,10 @@ const socketIO = require('socket.io');
 var cors = require('cors');
 const app = express();
 const scraper = require('./scraper');
-const port = 3000;
+var port = 3000;
+if (process.env.PORT) {
+  port = process.env.PORT;
+}
 
 app.use(cors());
 
@@ -13,7 +16,7 @@ app.get('/', async(req, res) => {
 });
 
 server = http.Server(app);
-server.listen(process.env.PORT);
+server.listen(port);
 console.log(`Example app listening on port ${port}`);
 
 io = socketIO(server, {cors : {
