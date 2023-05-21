@@ -11,7 +11,7 @@ var socketIo;
 async function open(io) {
   try {
     socketIo = io;
-    browser = await puppeteer.launch();
+    browser = await puppeteer.launch({ args: ['--no-sandbox'] });
     page = await browser.newPage();
     await page.goto(improvedInitiativeUrl);
     await page.exposeFunction('changeOccured', function() {
