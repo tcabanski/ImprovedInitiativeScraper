@@ -4,7 +4,7 @@ const fs = require('fs');
 
 var browser;
 var page;
-const improvedInitiativeUrl = 'https://improvedinitiative.app/p/9vcmqj0s';
+const improvedInitiativeUrl = process.env.URL ?? 'https://improvedinitiative.app/p/test0123';
 var changeOccuredCallback;
 var socketIo;
 
