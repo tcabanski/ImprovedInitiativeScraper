@@ -5,9 +5,8 @@ var cors = require('cors');
 const app = express();
 const scraper = require('./scraper');
 var port = 3000;
-if (process.env.PORT) {
-  port = process.env.PORT;
-}
+
+port = process.env.PORT ?? port;
 
 app.use(cors());
 
