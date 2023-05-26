@@ -52,7 +52,7 @@ async function scrape() {
   try {
     const page = await browser.newPage();
     await page.goto(improvedInitiativeUrl);
-    await page.waitForSelector('.combatant', { timeout: 5000 });
+    await page.waitForSelector('.combatants', { timeout: 5000 });
     return await getCombatants();
   } catch (error) {
     console.log(error);
