@@ -13,7 +13,9 @@ async function open(io) {
     socketIo = io;
     browser = await puppeteer.launch({ args: ['--no-sandbox'] });
     page = await browser.newPage();
+    console.log(`Connecting to ${improvedInitiativeUrl}`);
     await page.goto(improvedInitiativeUrl);
+    console.log(`Connected to ${improvedInitiativeUrl}`);
     await page.exposeFunction('changeOccured', function() {
       changeCallback();
     });
