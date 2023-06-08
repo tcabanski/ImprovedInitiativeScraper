@@ -1,1 +1,1 @@
-ssh -i d:/development/keys/aws.pem ubuntu@3.23.67.172 
+ssh -i c:/development/keys/aws.pem ubuntu@3.23.67.172 
